@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui/ForgetPassPage.dart';
 import 'package:ui/SignUp.dart';
 
 class LoginPage extends StatefulWidget {
@@ -105,6 +106,19 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                      width: double.infinity,
+                      child: GestureDetector(
+                          onTap: () {
+                            Navigator.push((context), MaterialPageRoute(builder: (context)=>ForgetPassPage()));
+                          },
+                          child: const Text(
+                            'Fogot password',
+                            textAlign: TextAlign.end,
+                          ))),
                   const SizedBox(
                     height: 48,
                   ),
