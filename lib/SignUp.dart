@@ -9,6 +9,10 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   bool _obsecureText = true;
+  TextEditingController _nameTextEditingController = TextEditingController();
+  TextEditingController _emailTextEditingController = TextEditingController();
+  TextEditingController _passwordTextEditingController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +72,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Container(
                     width: double.infinity,
                     child: TextField(
+                      controller: _nameTextEditingController,
                       autofocus: true,
                       decoration: InputDecoration(
                         label: Text('Name'),
@@ -82,6 +87,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Container(
                     width: double.infinity,
                     child: TextField(
+                      controller: _emailTextEditingController,
                       autofocus: true,
                       decoration: InputDecoration(
                         label: Text('Email'),
@@ -96,6 +102,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Container(
                     width: double.infinity,
                     child: TextField(
+                      controller: _passwordTextEditingController,
                       obscureText: _obsecureText,
                       autofocus: true,
                       decoration: InputDecoration(

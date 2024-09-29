@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui/ForgetPassPage.dart';
 import 'package:ui/SignUp.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,6 +11,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _obsecureText = true;
+  TextEditingController _emailTextEditingController = TextEditingController();
+  TextEditingController _passwordTextEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     width: double.infinity,
                     child: TextField(
+                      controller: _emailTextEditingController,
                       autofocus: true,
                       decoration: InputDecoration(
                         label: Text('Email'),
@@ -87,6 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     width: double.infinity,
                     child: TextField(
+                      controller: _passwordTextEditingController,
                       obscureText: _obsecureText,
                       autofocus: true,
                       decoration: InputDecoration(
@@ -105,6 +110,19 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                      width: double.infinity,
+                      child: GestureDetector(
+                          onTap: () {
+                            Navigator.push((context), MaterialPageRoute(builder: (context)=>ForgetPassPage()));
+                          },
+                          child: const Text(
+                            'Fogot password',
+                            textAlign: TextAlign.end,
+                          ))),
                   const SizedBox(
                     height: 48,
                   ),
