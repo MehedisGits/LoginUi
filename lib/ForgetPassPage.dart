@@ -8,6 +8,8 @@ class ForgetPassPage extends StatefulWidget {
 }
 
 class _ForgetPassPageState extends State<ForgetPassPage> {
+  TextEditingController _emailTextEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +29,7 @@ class _ForgetPassPageState extends State<ForgetPassPage> {
               Container(
                 width: double.infinity,
                 child: TextField(
+                  controller: _emailTextEditingController,
                   autofocus: true,
                   decoration: InputDecoration(
                     label: Text('Email'),
