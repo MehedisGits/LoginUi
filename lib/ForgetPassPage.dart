@@ -8,8 +8,6 @@ class ForgetPassPage extends StatefulWidget {
 }
 
 class _ForgetPassPageState extends State<ForgetPassPage> {
-  TextEditingController _emailTextEditingController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,13 +24,9 @@ class _ForgetPassPageState extends State<ForgetPassPage> {
         child: Center(
           child: Column(
             children: [
-              SizedBox(
-                height: 24,
-              ),
               Container(
                 width: double.infinity,
                 child: TextField(
-                  controller: _emailTextEditingController,
                   autofocus: true,
                   decoration: InputDecoration(
                     label: Text('Email'),
@@ -40,9 +34,6 @@ class _ForgetPassPageState extends State<ForgetPassPage> {
                     border: OutlineInputBorder(),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 24,
               ),
               InkWell(
                 onTap: () {},
@@ -63,13 +54,7 @@ class _ForgetPassPageState extends State<ForgetPassPage> {
                   )),
                 ),
               ),
-              SizedBox(
-                height: 24,
-              ),
               InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
                 child: Text('Back to login page...'),
               )
             ],
